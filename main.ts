@@ -1,16 +1,14 @@
 function LineTracking () {
+    Rover.setALLRGB(Rover.colors(RoverColors.White))
+    Rover.setBrightness(100)
     trackingValues = Rover.LineTracking()
     if (trackingValues == 2 || trackingValues == 5) {
-        Rover.setALLRGB(Rover.colors(RoverColors.Green))
         Rover.Move(trackingSpeed)
     } else if (trackingValues == 4 || trackingValues == 6) {
-        Rover.setALLRGB(Rover.colors(RoverColors.Red))
         Rover.MotorRunDual(speedSlowSide, speedFastSide)
     } else if (trackingValues == 1 || trackingValues == 3) {
-        Rover.setALLRGB(Rover.colors(RoverColors.Blue))
         Rover.MotorRunDual(speedFastSide, speedSlowSide)
     } else {
-        Rover.setALLRGB(Rover.colors(RoverColors.Black))
         Rover.MotorStopAll(MotorActions.Stop)
     }
 }
