@@ -36,7 +36,7 @@ input.onButtonPressed(Button.A, function () {
     Rover.setALLRGB(Rover.colors(RoverColors.White))
 })
 input.onButtonPressed(Button.B, function () {
-    LineTracking()
+	
 })
 let trackingValues = 0
 let speedFastSide = 0
@@ -46,3 +46,6 @@ basic.showIcon(IconNames.Happy)
 trackingSpeed = 110
 speedSlowSide = 25
 speedFastSide = 110
+basic.forever(function () {
+    LineTracking()
+})
